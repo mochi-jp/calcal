@@ -1,108 +1,71 @@
 body {
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-  background-image: url("bg_flower.png"); /* 背景画像ファイル名に合わせてね */
+  background-image: url('A_seamless,_floral_pattern_features_large,_stylize.png');
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-.container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.result-area {
-  margin-bottom: 20px;
-}
-
-.result-area .labels,
-.result-area .results {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-  font-size: 18px;
-}
-
-.result-area .results span {
-  font-weight: bold;
-  text-align: right;
-  width: 60px;
-}
-
-input[type="number"] {
-  width: 100%;
-  font-size: 20px;
-  padding: 10px;
-  margin-bottom: 15px;
-  text-align: right;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #fff;
-}
-
-.keypad {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.keypad button {
-  padding: 15px 0;
-  font-size: 18px;
-  border: none;
-  border-radius: 10px;
-  background-color: #f7c948;
-  color: #333;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.keypad button:hover {
-  background-color: #f0b429;
-}
-
-.calculate-btn {
-  width: 100%;
-  padding: 15px;
-  font-size: 20px;
-  background-color: #38bdf8;
-  color: white;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.calculate-btn:hover {
-  background-color: #0ea5e9;
-}
-
-body {
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   min-height: 100vh;
-  padding-bottom: 50px; /* ちょっと余白入れる */
+}
+
+h1, p {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+  text-shadow: 1px 1px 2px white;
 }
 
 .input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+input[type="number"] {
+  width: 200px;
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  text-align: right;
+  border: 1px solid #ccc;
+  background-color: #fff9e6;
+}
+
+button {
+  font-size: 20px;
+  padding: 10px 25px;
+  border: none;
+  background-color: #ffcc66;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px #999;
+}
+
+button:hover {
+  background-color: #ffb733;
+}
+
+#result-area {
+  display: flex;
+  justify-content: center;
   margin-bottom: 30px;
 }
 
-input[type="number"], button {
-  font-size: 20px;
+table {
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  text-align: right;
+  min-width: 70px;
 }
