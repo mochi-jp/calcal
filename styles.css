@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-  background-image: url("flower-bg.png"); /* 背景画像ファイル名に合わせてね */
+  background-image: url("bg_flower.png"); /* 背景画像ファイル名に合わせてね */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -89,4 +89,20 @@ input[type="number"] {
 
 .calculate-btn:hover {
   background-color: #0ea5e9;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100vh;
+  padding-bottom: 50px; /* ちょっと余白入れる */
+}
+
+.input-area {
+  margin-bottom: 30px;
+}
+
+input[type="number"], button {
+  font-size: 20px;
 }
