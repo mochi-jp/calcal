@@ -1,21 +1,21 @@
-function calculate() {
-  const input = document.getElementById('input-number').value;
-  const resultArea = document.getElementById('result-area');
+document.getElementById("calculateBtn").addEventListener("click", function () {
+  const input = document.getElementById("numberInput");
+  const value = parseFloat(input.value);
 
-  if (input.trim() === "") {
-    resultArea.innerHTML = "";
-    return;
+  if (!isNaN(value)) {
+    const result300 = Math.floor(value / 300);
+    const result310 = Math.floor(value / 310);
+    const result320 = Math.floor(value / 320);
+
+    document.getElementById("result300").textContent = result300;
+    document.getElementById("result310").textContent = result310;
+    document.getElementById("result320").textContent = result320;
+
+    document.getElementById("result-area").style.display = "flex";
   }
+});
 
-  const values = [300, 310, 320];
-  let resultHTML = "<table><tr><th>割る数</th><th>結果</th></tr>";
-
-  for (let i = 0; i < values.length; i++) {
-    const value = values[i];
-    const result = (parseFloat(input) / value).toFixed(2);
-    resultHTML += `<tr><td>${value}</td><td>${result}</td></tr>`;
-  }
-
-  resultHTML += "</table>";
-  resultArea.innerHTML = resultHTML;
-}
+// 入力欄をタップしたら中身をクリア＆カーソル点灯
+document.getElementById("numberInput").addEventListener("focus", function () {
+  this.value = "";
+});
