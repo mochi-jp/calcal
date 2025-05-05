@@ -1,82 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>還元種計算機</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <div class="section">
     <h1>還元種計算機</h1>
-    
-    <!-- 結果表示 -->
-    <div class="result-area">
-      <div class="labels">
-        <span> 300</span><span> 310</span><span> 320</span>
-      </div>
-      <div class="results">
-        <span id="result300"></span>
-        <span id="result310"></span>
-        <span id="result320"></span>
-      </div>
-    </div>
-
-    <!-- 入力欄 -->
-    <input type="number" id="inputNumber" placeholder="数字を入力" readonly>
-
-    <!-- 数字ボタン -->
-    <div class="keypad">
-      <button onclick="appendNumber('1')">1</button>
-      <button onclick="appendNumber('2')">2</button>
-      <button onclick="appendNumber('3')">3</button>
-      <button onclick="appendNumber('4')">4</button>
-      <button onclick="appendNumber('5')">5</button>
-      <button onclick="appendNumber('6')">6</button>
-      <button onclick="appendNumber('7')">7</button>
-      <button onclick="appendNumber('8')">8</button>
-      <button onclick="appendNumber('9')">9</button>
-      <button onclick="clearInput()">C</button>
-      <button onclick="appendNumber('0')">0</button>
-      <button onclick="backspace()">←</button>
-    </div>
-
-    <!-- 計算ボタン -->
-    <button class="calculate-btn" onclick="calculate()">計算する！</button>
   </div>
 
-  <script>
-    function calculate() {
-      const input = document.getElementById("inputNumber").value;
-      const num = parseFloat(input);
-      if (!isNaN(num)) {
-        document.getElementById("result300").textContent = Math.floor(num / 300);
-        document.getElementById("result310").textContent = Math.floor(num / 310);
-        document.getElementById("result320").textContent = Math.floor(num / 320);
-      } else {
-        alert("数字を入力してね！");
-      }
-    }
+  <div class="section">
+    <div id="result-area"></div>
+  </div>
 
-    function appendNumber(num) {
-      const input = document.getElementById("inputNumber");
-      input.value += num;
-    }
+  <div class="section input-area">
+    <input type="number" id="input-number" placeholder="数字を入力" onfocus="this.value='';" />
+  </div>
 
-    function clearInput() {
-      document.getElementById("inputNumber").value = "";
-      document.getElementById("result300").textContent = "";
-      document.getElementById("result310").textContent = "";
-      document.getElementById("result320").textContent = "";
-    }
+  <div class="section">
+    <button onclick="calculate()">計算する！</button>
+  </div>
 
-    function backspace() {
-      const input = document.getElementById("inputNumber");
-      input.value = input.value.slice(0, -1);
-    }
+  <!-- 数字ボタン（メモとして残して非表示） -->
+  <div class="number-buttons">
+    <button>1</button><button>2</button><button>3</button>
+    <button>4</button><button>5</button><button>6</button>
+    <button>7</button><button>8</button><button>9</button>
+    <button>0</button><button>←</button><button>C</button>
+  </div>
 
-    // 入力欄タップでクリア
-    document.getElementById("inputNumber").addEventListener("click", clearInput);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
