@@ -78,7 +78,7 @@ button:hover {
   display: none;
 }
 .button-container {
-  margin-top: 20px; /* 必要に応じて値を調整 */
+  margin-top: 80px; /* 必要に応じて値を調整 */
   display: flex;
   justify-content: center; /* ボタンを中央揃え */
 }
