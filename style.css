@@ -81,4 +81,5 @@ button:hover {
   margin-top: 80px; /* 必要に応じて値を調整 */
   display: flex;
   justify-content: center; /* ボタンを中央揃え */
+  height: 40vh; /* 中央下になるかな？ */ 
 }
