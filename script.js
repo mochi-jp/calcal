@@ -8,7 +8,7 @@ function calculate() {
   }
 
   const values = [300, 310, 320];
-  let resultHTML = "<table><tr><th>割る数</th><th>結果</th></tr>";
+  let resultHTML = "<table><tr><th></th><th></th></tr>";
 
   for (let i = 0; i < values.length; i++) {
     const value = values[i];
