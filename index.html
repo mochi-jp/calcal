@@ -7,36 +7,28 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>還元種計算機</h1>
-
-  <div class="input-area">
-    <input
-      type="number"
-      id="numberInput"
-      placeholder="ここに数字を入力"
-      inputmode="numeric"
-      pattern="[0-9]*"
-    />
-    <button id="calculateBtn">計算する</button>
+  <div class="section">
+    <h1>還元種計算機</h1>
   </div>
 
-  <div id="result-area" style="display: none;">
-    <table>
-      <thead>
-        <tr>
-          <th>300</th>
-          <th>310</th>
-          <th>320</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="result300"></td>
-          <td id="result310"></td>
-          <td id="result320"></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="section">
+    <div id="result-area"></div>
+  </div>
+
+  <div class="section input-area">
+    <input type="number" id="input-number" placeholder="数字を入力" onfocus="this.value='';" />
+  </div>
+
+  <div class="section">
+    <button onclick="calculate()">計算する！</button>
+  </div>
+
+  <!-- 数字ボタン（メモとして残して非表示） -->
+  <div class="number-buttons">
+    <button>1</button><button>2</button><button>3</button>
+    <button>4</button><button>5</button><button>6</button>
+    <button>7</button><button>8</button><button>9</button>
+    <button>0</button><button>←</button><button>C</button>
   </div>
 
   <script src="script.js"></script>
