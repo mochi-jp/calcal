@@ -45,7 +45,6 @@ button {
   border: none;
   background-color: #ffcc66;
   border-radius: 12px;
-  margin-top: 2px; /* ボタンの上に余白を追加 */
   cursor: pointer;
   box-shadow: 1px 1px 4px #999;
 }
@@ -77,4 +76,9 @@ button:hover {
 /* 数字ボタン（非表示） */
 .number-buttons {
   display: none;
+}
+.button-container {
+  margin-top: 20px; /* 必要に応じて値を調整 */
+  display: flex;
+  justify-content: center; /* ボタンを中央揃え */
 }
