@@ -1,85 +1,91 @@
-body {
-  font-family: sans-serif;
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  background-image: url('https://github.com/mochi-jp/calcal/raw/main/bg_flower.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  height: 100vh;
+  font-family: sans-serif;
+}
+
+.container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .section {
-  flex: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
-.section h1 {
-  margin: 0;
-  font-size: 24px;
-  color: #333;
-  text-shadow: 1px 1px 2px white;
+/* 高さを割合で指定！ */
+.header {
+  flex: 0 0 16%;
+  flex-direction: column;
 }
 
-.input-area input[type="number"] {
-  width: 80%;
-  font-size: 24px;
-  padding: 12px;
-  text-align: right;
+.main {
+  flex: 1 0 58%;
+  flex-direction: column;
+}
+
+.footer {
+  flex: 0 0 22%;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+#inputNumber {
+  width: 200px;
+  font-size: 20px;
+  padding: 10px;
+  margin: 15px 0;
   border-radius: 8px;
+  text-align: right;
   border: 1px solid #ccc;
-  background-color: #fffdf5;
-  box-shadow: 1px 1px 3px #aaa;
 }
 
 button {
-  width: 80%;
   font-size: 20px;
-  padding: 15px 0;
+  padding: 10px 85px;
   border: none;
   background-color: #ffcc66;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
-  box-shadow: 1px 1px 4px #999;
 }
 
-button:hover {
-  background-color: #ffb733;
-}
-
-#result-area {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 1px 1px 3px #999;
-}
-
-#result-area table {
-  width: 100%;
+table {
   border-collapse: collapse;
-  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-top: 10px;
 }
 
-#result-area th,
-#result-area td {
-  padding: 4px 8px;
-  border-bottom: 1px solid #ccc;
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px 20px;
   text-align: right;
+  min-width: 70px;
 }
 
-/* 数字ボタン（非表示） */
-.number-buttons {
-  display: none;
-}
-.button-container {
-  margin-top: 80px; /* 必要に応じて値を調整 */
+#button-area {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   display: flex;
-  justify-content: center; /* ボタンを中央揃え */
-  height: 40vh; /* 中央下になるかな？ */ 
+  justify-content: center;
+  z-index: 1000;
+  pointer-events: auto;
+  padding-bottom: env(safe-area-inset-bottom); /* iPhone対策 */
+}
+
+#button-area button {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #ffcc66;
+  border: none;
+  cursor: pointer;
 }
