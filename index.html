@@ -1,36 +1,65 @@
-<!DOCTYPE html>
-<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ハコニワ還元種計算機</title>
+  <title>還元種計算機</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="section">
-    <h1>ハコニワ還元種計算機</h1>
+  <div class="container">
+
+    <header class="section header">
+       <h1>還元種計算機</h1>
+    <p>入力窓タップでClearします。</p><p>キーボードの確定でも計算します。</p><p>計算後はtapしやすく下がる…ハズ！</p>
+    </header>
+
+    <main class="section main">
+      <div id="result-area">
+        <table id="resultTable" style="display:none;">
+          <tr><th>300</th><th>310</th><th>320</th></tr>
+          <tr>
+            <td id="result300"></td>
+            <td id="result310"></td>
+            <td id="result320"></td>
+          </tr>
+        </table>
+      </div>
+   <!-- 入力欄は通常フローで -->
+      <input type="number" id="inputNumber" placeholder="点数" inputmode="numeric" />
+      
+   <!-- ボタンは画面下に固定 -->
+      <div id="button-area">
+      <button onclick="calculate()">計算する！</button>
+    </div>
+    </main>
+
+    <footer class="section footer">
+      <p>© 2025 Mochitan</p>
+    </footer>
+
   </div>
 
-  <div class="section">
-    <div id="result-area"></div>
-  </div>
+  <script>
+    const input = document.getElementById("inputNumber");
 
-  <div class="section input-area">
-    <input type="number" id="input-number" placeholder="点数を入力" onfocus="this.value='';" />
-  </div>
+    function calculate() {
+      const num = parseFloat(input.value);
+      if (!isNaN(num)) {
+        document.getElementById("result300").textContent = Math.floor(num / 300);
+        document.getElementById("result310").textContent = Math.floor(num / 310);
+        document.getElementById("result320").textContent = Math.floor(num / 320);
+        document.getElementById("resultTable").style.display = "table";
+        input.blur();
+        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 300);
+      } else {
+        alert("ちゃんと数字を入れてね！");
+      }
+    }
 
-  <div class="section">
-    <button class="move-up-button" onclick="calculate()">計算する！</button>
-</div>
-
-  <!-- 数字ボタン（メモとして残して非表示） -->
-  <div class="number-buttons">
-    <button>1</button><button>2</button><button>3</button>
-    <button>4</button><button>5</button><button>6</button>
-    <button>7</button><button>8</button><button>9</button>
-    <button>0</button><button>←</button><button>C</button>
-  </div>
-
-  <script src="script.js"></script>
+    input.addEventListener("keydown", e => {
+      if (e.key === "Enter") calculate();
+    });
+    input.addEventListener("change", calculate);
+    input.addEventListener("focus", () => input.value = "");
+  </script>
 </body>
 </html>
