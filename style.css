@@ -2,9 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1)), 
-                    url('https://github.com/mochi-jp/calcal/blob/master/bg_floer.png?raw=true');
+  font-family: sans-serif;  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -95,4 +93,17 @@ th, td {
   background-color: #ffcc66;
   border: none;
   cursor: pointer;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://github.com/mochi-jp/calca/blob/master/bg_floer.png?raw=true');
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* ← 背景が後ろに隠れるように */
+  filter: brightness(1.1) blur(2px); /* フィルター効果 */
 }
