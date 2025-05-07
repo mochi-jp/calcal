@@ -6,7 +6,7 @@ html, body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: **fixed**; /* ← これで固定 */
+  /* background-attachment: **fixed**;  これで固定 */
   
 }
 
