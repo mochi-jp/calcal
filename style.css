@@ -105,5 +105,5 @@ th, td {
   background-size: cover;
   background-position: center;
   z-index: -1; /* ← 背景が後ろに隠れるように */
-  filter: brightness(1.1) blur(2px); /* フィルター効果 */
+  filter: brightness(1.1) blur(6px); /* フィルター効果 */
 }
